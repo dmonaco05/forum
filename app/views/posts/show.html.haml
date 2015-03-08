@@ -3,9 +3,12 @@
   %p= @post.content
 
   #comments
-    %h2
+    %h3
       = @post.comments.count
-      Comments
+      - if @post.comments.count == 1
+        Comment
+      - else
+        Comments
     = render @post.comments
 
     %h3 Reply to thread
